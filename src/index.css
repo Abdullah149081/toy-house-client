@@ -6,3 +6,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  @apply font-bold text-lg tracking-wide   text-white underline decoration-[#FF8C9A] decoration-2 underline-offset-8;
+}
+.default {
+  @apply font-bold text-lg px-2 text-white tracking-wide  hover:duration-500 hover:rounded-full hover:px-2 hover:bg-[#ff8c9a];
+}
