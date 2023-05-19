@@ -20,3 +20,8 @@
 .btn-toy {
   @apply bg-[#9363B5] border-0 rounded-full hover:bg-[#ff8c9a];
 }
+
+.toy-footer :hover {
+  font-weight: 600;
+  color: #9363b5;
+}

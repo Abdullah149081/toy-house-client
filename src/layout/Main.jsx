@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import GridLoader from "react-spinners/GridLoader";
+import Footer from "../page/shared/Footer/Footer";
 import Navbar from "../page/shared/Navbar/Navbar";
 import { AuthContext } from "../providers/AuthProviders";
 
@@ -22,6 +23,7 @@ const Main = () => {
       <div>
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 };
