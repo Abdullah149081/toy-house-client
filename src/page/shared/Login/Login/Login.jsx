@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   return (
     <div className="min-h-screen toy-container">
       <div className=" flex justify-center gap-12 ">
         <div className="w-1/2 lg:block hidden">
-          <img src="https://i.ibb.co/L66W6Tw/login.jpg" alt="login" />
+          <img className="animate-pulse" src="https://i.ibb.co/L66W6Tw/login.jpg" alt="login" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm  ">
           <h2 className="text-center text-4xl text-[#ff8c9a] font-bold mt-12">Sign in to Toy House</h2>
-          <form className="card-body">
+          <form className="card-body flex-none">
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-lg text-accent font-medium">Email</span>
@@ -32,14 +33,14 @@ const Login = () => {
                 Sign In
               </button>
             </div>
-
-            <p className="mt-4 text-center text-gray-800 font-medium">
-              Not a member?
-              <Link className="text-primary text-xs link-hover ml-2" to="/sign-up">
-                Sign up
-              </Link>
-            </p>
           </form>
+          <SocialLogin />
+          <p className="mt-4 text-center text-gray-800 font-medium">
+            Not a member?
+            <Link className="text-primary text-xs link-hover ml-2" to="/sign-up">
+              Sign up
+            </Link>
+          </p>
         </div>
       </div>
     </div>
