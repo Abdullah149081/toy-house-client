@@ -38,6 +38,11 @@ const Gallery = () => {
 
   return (
     <div className="toy-container">
+      <div className="flex justify-center mb-2">
+        <figure className="border rounded-full p-4">
+          <img src="https://i.ibb.co/s2J1Hf5/seperator.png" alt="" />
+        </figure>
+      </div>
       <h2 className="text-center text-4xl font-bold">Our Gallery</h2>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12  ">
         {gallery?.map((image) => (

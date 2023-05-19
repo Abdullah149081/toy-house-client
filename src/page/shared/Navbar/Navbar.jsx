@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="md:sticky top-0 z-10">
-      <nav className="lg:px-32 relative bg-[#9363b5] py-4 flex  justify-between items-center pl-4 ">
+      <nav className="lg:px-36 2xl:px-80 relative bg-[#9363b5] py-4 flex  justify-between items-center pl-4 ">
         <img className="hidden lg:block absolute top-[70px] z-0 left-0 w-full" src={nav} alt="" />
         <div>
           <Link to="/">
