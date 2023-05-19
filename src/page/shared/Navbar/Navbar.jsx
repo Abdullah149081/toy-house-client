@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`flex flex-col md:py-0 md:space-x-10  divide-neutral-300  divide-y lg:divide-y-0  lg:w-full font-bold text-[#ffff]  md:static md:flex-row  md:block ${
+            className={`flex flex-col md:py-0 md:space-x-6  divide-neutral-300  divide-y lg:divide-y-0  lg:w-full font-bold text-[#ffff]  md:static md:flex-row  md:block ${
               open ? "top-22 left-0  w-1/2 text-left bg-[#9363B5] py-12  px-6 space-y-6  rounded-br-lg absolute" : "hidden"
             }`}
           >

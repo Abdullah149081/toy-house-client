@@ -13,3 +13,6 @@
 .default {
   @apply font-bold text-lg px-2 text-white tracking-wide  hover:duration-500 hover:rounded-full hover:px-2 hover:bg-[#ff8c9a];
 }
+.btn-toy {
+  @apply bg-[#9363B5] border-0 rounded-full hover:bg-[#ff8c9a];
+}
