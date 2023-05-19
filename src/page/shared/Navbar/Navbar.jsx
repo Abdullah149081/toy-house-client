@@ -45,6 +45,13 @@ const Navbar = () => {
                 open ? "top-22 left-0  z-10 w-1/2 text-left bg-[#9363B5] py-12  px-6 space-y-6  rounded-br-lg absolute" : "hidden"
               }`}
             >
+              {user && (
+                <div className="md:hidden mx-auto">
+                  <p title={user?.displayName}>
+                    <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-accent" src={user?.photoURL} alt="" />
+                  </p>
+                </div>
+              )}
               <ActiveLink to="/">Home</ActiveLink>
               <ActiveLink to="/all-toys">All Toys</ActiveLink>
               <ActiveLink to="/blog">Blog</ActiveLink>
@@ -55,6 +62,13 @@ const Navbar = () => {
                 </>
               )}
               {!user && <ActiveLink to="/sign-in">Sign in</ActiveLink>}
+              {user && (
+                <button onClick={handleLogOut} type="button" className="btn btn-toy   w-2/4 block  lg:hidden ">
+                  <span className="inline-flex font-extrabold items-center gap-2 ">
+                    logout <FiLogOut className="w-4 h-4" />
+                  </span>
+                </button>
+              )}
             </div>
           </div>
 
