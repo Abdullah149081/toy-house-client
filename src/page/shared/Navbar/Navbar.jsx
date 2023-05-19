@@ -42,7 +42,7 @@ const Navbar = () => {
             <ActiveLink to="/blog">Blog</ActiveLink>
             <ActiveLink to="/add-toy">Add A Toy</ActiveLink>
             <ActiveLink to="/my-toys">My Toys</ActiveLink>
-            <ActiveLink to="/sing-in">Sing in</ActiveLink>
+            <ActiveLink to="/sign-in">Sign in</ActiveLink>
           </div>
         </div>
       </nav>
