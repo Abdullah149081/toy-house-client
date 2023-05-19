@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="min-h-screen toy-container">
       <div className=" flex justify-center gap-12 ">
@@ -21,13 +27,16 @@ const Login = () => {
               <label className="label">
                 <span className="label-text text-lg text-accent font-medium">Password</span>
               </label>
-              <input type="password" name="password" placeholder="Your password" className="input input-bordered text-gray-800" />
+              <input type={showPassword ? "text" : "password"} name="password" placeholder="Your password" className="input input-bordered text-gray-800" />
               <label className="label">
                 <button type="button" className="label-text-alt link link-hover text-lg text-accent">
                   Forgot password?
                 </button>
               </label>
             </div>
+            <button onClick={handleShowPassword} className="text-gray-900 font-bold text-start" type="button">
+              {showPassword ? "Hide Password" : "Show Password"}
+            </button>
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-toy">
                 Sign In
