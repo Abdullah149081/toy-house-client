@@ -1,9 +1,32 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../../providers/AuthProviders";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const { signInUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setError("");
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signInUser(email, password)
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err?.message);
+      });
+  };
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -16,7 +39,7 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm  ">
           <h2 className="text-center text-4xl text-[#ff8c9a] font-bold mt-12">Sign in to Toy House</h2>
-          <form className="card-body flex-none">
+          <form onSubmit={handleLogin} className="card-body flex-none">
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-lg text-accent font-medium">Email</span>
@@ -37,6 +60,7 @@ const Login = () => {
             <button onClick={handleShowPassword} className="text-gray-900 font-bold text-start" type="button">
               {showPassword ? "Hide Password" : "Show Password"}
             </button>
+            {error && <span className="text-error font-bold text-xs mt-2">{error}</span>}
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-toy">
                 Sign In
