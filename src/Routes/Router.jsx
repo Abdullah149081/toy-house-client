@@ -5,6 +5,8 @@ import AddToy from "../page/shared/AddToy/AddToy";
 import ErrorPage from "../page/shared/ErrorPage/ErrorPage";
 import Login from "../page/shared/Login/Login/Login";
 import Register from "../page/shared/Login/Register/Register";
+
+import MyToys from "../page/shared/MyToys/MyToys";
 import ProductDetail from "../page/shared/ProductDetail/ProductDetail";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddToy />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/my-toys",
+        element: (
+          <PrivateRoutes>
+            <MyToys />
           </PrivateRoutes>
         ),
       },

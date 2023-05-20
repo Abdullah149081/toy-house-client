@@ -1,5 +1,7 @@
-import React from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 const Gallery = () => {
   const gallery = [
     {
@@ -38,15 +40,15 @@ const Gallery = () => {
 
   return (
     <div className="toy-container">
-      <div className="flex justify-center mb-2">
+      <div className="flex justify-center mb-2 ">
         <figure className="border rounded-full p-4">
           <img className="animate-pulse" src="https://i.ibb.co/s2J1Hf5/seperator.png" alt="" />
         </figure>
       </div>
       <h2 className="text-center text-4xl font-bold">Our Gallery</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12  ">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12">
         {gallery?.map((image) => (
-          <div className="border rounded-lg " key={image.id}>
+          <div className="border rounded-lg" key={image.id} data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
             <img className="lg:h-auto rounded-lg w-full" src={image?.img} alt="img" />
           </div>
         ))}
