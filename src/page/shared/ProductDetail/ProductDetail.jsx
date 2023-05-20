@@ -10,9 +10,9 @@ const ProductDetail = () => {
     <div className="toy-container">
       <div className="hero min-h-screen rounded-xl">
         <div className="hero-content flex-col lg:flex-row lg:gap-20">
-          <img src={toyPicture} className="max-w-sm rounded-lg shadow-2xl" alt="" />
+          <img src={toyPicture} className=" w-full lg:max-w-sm rounded-lg shadow-2xl" alt="" />
           <div className="space-y-4">
-            <h1 className="text-5xl font-bold text-[#ff8c9a]">{toyName}</h1>
+            <h1 className="text-3xl lg:text-5xl font-bold text-[#ff8c9a]">{toyName}</h1>
             <p className="card-title">Seller Name: {name}</p>
             <p className="card-title">
               <MdOutgoingMail /> {email}

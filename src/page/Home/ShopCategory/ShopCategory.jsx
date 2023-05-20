@@ -18,7 +18,7 @@ const ShopCategory = () => {
   };
   return (
     <div className="toy-container">
-      <h2 className="text-4xl text-center font-bold mb-6">Shop by category</h2>
+      <h2 className="text-3xl text-center rounded-t-lg py-2 text-white font-bold mx-auto w-[346px] bg-[#9363b5]">Shop by category</h2>
       <div className="tabs flex justify-center">
         <button onClick={() => handleSelectTab("Teddy bear")} className={`tab tab-lg tab-lifted  font-bold ${activeTab === "Teddy bear" && "tab-active text-info"}`} type="button">
           Teddy bear

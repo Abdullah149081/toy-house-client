@@ -5,6 +5,7 @@ import ErrorPage from "../page/shared/ErrorPage/ErrorPage";
 import Login from "../page/shared/Login/Login/Login";
 import Register from "../page/shared/Login/Register/Register";
 import ProductDetail from "../page/shared/ProductDetail/ProductDetail";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/view-details/:id",
-        element: <ProductDetail />,
+        element: (
+          <PrivateRoutes>
+            <ProductDetail />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/toyProducts/${params.id}`),
       },
     ],
