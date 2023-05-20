@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Swal from "sweetalert2";
 import PageTitle from "../../../PageTitle/PageTitle";
 import { AuthContext } from "../../../providers/AuthProviders";
 
@@ -22,7 +23,25 @@ const AddToy = () => {
     const detail = form.detail.value;
 
     const toyAdd = { toyPicture, toyName, name, email, price, rating, category, quantity, detail };
-    console.log(toyAdd);
+
+    fetch("http://localhost:5000/toyProducts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(toyAdd),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success",
+            text: "Product add successfully",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+      });
   };
 
   const handleCategorySelect = (e) => {

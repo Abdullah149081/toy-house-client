@@ -1,4 +1,5 @@
 import { Link, useRouteError } from "react-router-dom";
+import PageTitle from "../../../PageTitle/PageTitle";
 import "./ErrorPage.css";
 
 export default function ErrorPage() {
@@ -6,6 +7,7 @@ export default function ErrorPage() {
 
   return (
     <div id="notfound">
+      <PageTitle title="Not Found" />
       <div className="notfound px-4 pt-40 w-full max-w-xl lg:pt-0 lg:pr-0 lg:pl-40">
         <div className="notfound-404 " />
         <div className="space-y-4">
