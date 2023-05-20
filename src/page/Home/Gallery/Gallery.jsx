@@ -47,7 +47,7 @@ const Gallery = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12  ">
         {gallery?.map((image) => (
           <div className="border rounded-lg " key={image.id}>
-            <img className="lg:h-[300px] rounded-lg w-full" src={image?.img} alt="img" />
+            <img className="lg:h-auto rounded-lg w-full" src={image?.img} alt="img" />
           </div>
         ))}
       </div>

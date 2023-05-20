@@ -16,7 +16,8 @@ const Product = ({ product }) => {
           <h2 className="card-title">${price}</h2>
           <div className="inline-flex items-center gap-4 justify-center">
             <Rating readOnly style={{ maxWidth: 100 }} value={rating} />
-            <span className="card-title mt-1">{rating}</span>
+            <span className="bg-blue-100 text-[#9363b5] text-base font-semibold  px-2.5 py-0.5 rounded  ">{rating}</span>
+            {/* <span className="card-title mt-1">{rating}</span> */}
           </div>
           <div className="card-actions mt-4 ">
             <Link to={`/view-details/${_id}`}>

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import GridLoader from "react-spinners/GridLoader";
 import Footer from "../page/shared/Footer/Footer";
 import Navbar from "../page/shared/Navbar/Navbar";
@@ -20,8 +20,9 @@ const Main = () => {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="min-h-[calc(100vh-530px)]">
         <Outlet />
+        <ScrollRestoration />
       </div>
       <Footer />
     </div>
