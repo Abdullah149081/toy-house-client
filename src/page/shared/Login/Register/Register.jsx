@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import PageTitle from "../../../../PageTitle/PageTitle";
 import { AuthContext } from "../../../../providers/AuthProviders";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -53,6 +54,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen  lg:py-4  toy-container">
+      <PageTitle title="Sign Up" />
       <div className="flex justify-center gap-12">
         <div className="w-1/2 lg:block hidden">
           <img className="animate-pulse" src="https://i.ibb.co/L66W6Tw/login.jpg" alt="login" />

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PageTitle from "../../../PageTitle/PageTitle";
 import Product from "../Product/Product";
 
 const ShopCategory = () => {

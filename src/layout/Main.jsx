@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import GridLoader from "react-spinners/GridLoader";
+import PageTitle from "../PageTitle/PageTitle";
 import Footer from "../page/shared/Footer/Footer";
 import Navbar from "../page/shared/Navbar/Navbar";
 import { AuthContext } from "../providers/AuthProviders";

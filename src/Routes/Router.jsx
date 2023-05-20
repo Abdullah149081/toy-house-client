@@ -23,12 +23,16 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/add-toy",
-        element: <AddToy />,
-      },
-      {
         path: "/sign-up",
         element: <Register />,
+      },
+      {
+        path: "/add-toy",
+        element: (
+          <PrivateRoutes>
+            <AddToy />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/view-details/:id",

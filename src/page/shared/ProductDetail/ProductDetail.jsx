@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Helmet } from "react-helmet";
 import { MdOutgoingMail, MdProductionQuantityLimits } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 
@@ -7,8 +8,12 @@ const ProductDetail = () => {
   const productDetail = useLoaderData();
   const { toyPicture, toyName, name, email, price, rating, quantity, detail } = productDetail;
   return (
-    <div className="toy-container">
-      <div className="hero min-h-screen rounded-xl">
+    <div className="toy-container min-h-screen">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Toy House | {toyName}</title>
+      </Helmet>
+      <div className="hero lg:mt-20 rounded-xl">
         <div className="hero-content flex-col lg:flex-row lg:gap-20">
           <img src={toyPicture} className=" w-full lg:max-w-sm rounded-lg shadow-2xl" alt="" />
           <div className="space-y-4">

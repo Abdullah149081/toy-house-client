@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import PageTitle from "../../../PageTitle/PageTitle";
 import { AuthContext } from "../../../providers/AuthProviders";
 
 const AddToy = () => {
@@ -8,7 +9,6 @@ const AddToy = () => {
 
   const handleAddToToy = (e) => {
     e.preventDefault();
-
     const form = e.target;
 
     const toyPicture = form.photo.value;
@@ -31,6 +31,7 @@ const AddToy = () => {
 
   return (
     <div className="toy-container min-h-screen">
+      <PageTitle title="Add Toy" />
       <div className="lg:w-4/5 lg:mx-auto  bg-[#ff8c9a] bg-opacity-20  px-6 lg:px-28 py-16 rounded-lg">
         <h1 className="text-center text-4xl text-[#374151] text-shadow font-bold ">Add New Toy</h1>
         <form onSubmit={handleAddToToy} className="mt-4">

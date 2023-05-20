@@ -1,12 +1,14 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import PageTitle from "../../../PageTitle/PageTitle";
 
 const Product = ({ product }) => {
   const { toyPicture, toyName, price, rating, _id } = product;
 
   return (
     <div>
+      {/* <PageTitle title="View Details" /> */}
       <div className="card w-full h-full  bg-[#f6f7f9] shadow-xl">
         <figure className="border">
           <img src={toyPicture} alt="Shoes" className="border-0  w-[268px] h-[268px]" />
