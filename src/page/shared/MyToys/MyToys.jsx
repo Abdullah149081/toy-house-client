@@ -43,21 +43,21 @@ const MyToys = () => {
   };
 
   return (
-    <div className="toy-container ">
+    <div className="toy-container min-h-screen ">
       <PageTitle title="My Toys" />
       <div className="overflow-x-auto">
         <table className="table table-zebra text-center -z-0 w-full">
           {/* head */}
           <thead>
             <tr>
-              <th className="capitalize text-base">Sl No</th>
-              <th className="capitalize text-base">Toy Name</th>
-              <th className="capitalize text-base">Sub-category</th>
-              <th className="capitalize text-base">Price</th>
-              <th className="capitalize text-base">Available quantity</th>
-              <th className="capitalize text-base">Rating</th>
-              <th className="capitalize text-base">Action</th>
-              <th className="capitalize text-base">Details</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Sl No</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Toy Name</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Sub-category</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Price</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Available quantity</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Rating</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Action</th>
+              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Details</th>
             </tr>
           </thead>
           <tbody>
