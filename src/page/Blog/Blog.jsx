@@ -98,6 +98,37 @@ const Blog = () => {
             </div>
           </div>
         </div>
+
+        {/* Q: 4 */}
+        <div className="space-y-4 mt-8 p-4 ">
+          <h2 className="lg:text-2xl font-bold">4. What is MongoDB aggregate and how does it work?</h2>
+
+          <p className="text-lg font-normal">
+            In MongoDB, aggregate operations are used to perform advanced data analysis and transformation. It allows to process and aggregate data from multiple documents into one collection, apply
+            various operations and get aggregated results based on requirements.
+          </p>
+          <p className="text-lg font-bold">Here are some commonly used stages in the MongoDB aggregate pipeline:</p>
+          <ul className="">
+            <li className="text-lg">
+              <span className="font-semibold">$match:</span> This stage allows you to filter the data that is passed to the pipeline.
+            </li>
+            <li className="text-lg">
+              <span className="font-semibold">$group:</span> This stage allows you to group the data by a certain field.
+            </li>
+            <li className="text-lg">
+              <span className="font-semibold">$sum:</span> This stage allows you to calculate the sum of a field.
+            </li>
+            <li className="text-lg">
+              <span className="font-semibold">$avg:</span> This stage allows you to calculate the average of a field.
+            </li>
+            <li className="text-lg">
+              <span className="font-semibold">$max:</span> This stage allows you to calculate the maximum value of a field.
+            </li>
+            <li className="text-lg">
+              <span className="font-semibold">$min:</span> This stage allows you to calculate the minimum value of a field.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
