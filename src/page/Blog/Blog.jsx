@@ -71,6 +71,33 @@ const Blog = () => {
             </div>
           </div>
         </div>
+
+        {/* Q:3  */}
+        <div className="space-y-4 mt-8 p-4 ">
+          <h2 className="lg:text-2xl font-bold">3. What is express js? What is Nest JS</h2>
+
+          <p className="text-lg font-normal">
+            <span className="text-lg font-semibold">Express js:</span> Express.js is a popular and minimalistic web application framework for Node.js. It provides a set of features and utilities that
+            simplify the process of building web applications and APIs. Express.js allows developers to handle HTTP requests and responses, define routes, manage middleware.
+          </p>
+          <p className="text-lg font-normal">
+            <span className="text-lg font-semibold">Nest js:</span> NestJS is a progressive Node.js framework built on top of Express that provides a more robust and feature-rich platform for building
+            web applications. It uses TypeScript, which is a superset of JavaScript that provides type safety and other benefits. NestJS also provides a number of features that make it easier to build
+            scalable and maintainable web applications, such as dependency injection, routing, and templating.
+          </p>
+
+          <div className="inline-flex items-center justify-center w-full mt-6">
+            <hr className="w-96 h-1 my-8 bg-gray-200 border-0 rounded " />
+            <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 ">
+              <svg aria-hidden="true" className="w-5 h-5 text-[#ff8c9a]" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
