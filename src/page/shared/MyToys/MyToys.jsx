@@ -9,7 +9,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/toyProductsByEmail?email=${user?.email}`)
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProductsByEmail?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [user?.email]);
@@ -25,7 +25,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toyProducts/${id}`, {
+        fetch(`https://toy-marketplace-server-omega.vercel.app/toyProducts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

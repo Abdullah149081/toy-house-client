@@ -6,8 +6,8 @@ import ErrorPage from "../page/shared/ErrorPage/ErrorPage";
 import Login from "../page/shared/Login/Login/Login";
 import Register from "../page/shared/Login/Register/Register";
 
-import AllToy from "../page/shared/AllToy/AllToy";
 import Blog from "../page/Blog/Blog";
+import AllToy from "../page/shared/AllToy/AllToy";
 import MyToys from "../page/shared/MyToys/MyToys";
 import ProductDetail from "../page/shared/ProductDetail/ProductDetail";
 import UpdateToy from "../page/shared/UpdateToy/UpdateToy";
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             <UpdateToy />
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/toyProducts/${params.id}`),
+        loader: ({ params }) => fetch(`https://toy-marketplace-server-omega.vercel.app/toyProducts/${params.id}`),
       },
       {
         path: "/view-details/:id",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             <ProductDetail />
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/toyProducts/${params.id}`),
+        loader: ({ params }) => fetch(`https://toy-marketplace-server-omega.vercel.app/toyProducts/${params.id}`),
       },
     ],
   },

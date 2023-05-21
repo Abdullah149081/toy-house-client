@@ -7,7 +7,7 @@ const ShopCategory = () => {
   const [activeTab, setActiveTab] = useState("Teddy bear");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toyProductsByCategory/${activeTab}`)
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProductsByCategory/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

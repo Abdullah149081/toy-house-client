@@ -26,7 +26,7 @@ const UpdateToy = () => {
 
     const toyAdd = { toyPicture, toyName, name, email, price, rating, category, quantity, detail };
 
-    fetch(`http://localhost:5000/toyProducts/${_id}`, {
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProducts/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

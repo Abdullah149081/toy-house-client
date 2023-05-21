@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import PageTitle from "../../../PageTitle/PageTitle";
 import { AuthContext } from "../../../providers/AuthProviders";
@@ -7,27 +8,28 @@ import { AuthContext } from "../../../providers/AuthProviders";
 const AllToy = () => {
   const [allToys, setAllToys] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [asc, setAsc] = useState(true);
   const [searchValue, setSearchValue] = useState("");
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toyProducts")
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProducts?sort=${asc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
         setLoading(false);
       });
-  }, []);
+  }, [asc]);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toyNameBySearch/${searchValue}`)
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyNameBySearch/${searchValue}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   };
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      fetch(`http://localhost:5000/toyNameBySearch/${searchValue}`)
+      fetch(`https://toy-marketplace-server-omega.vercel.app/toyNameBySearch/${searchValue}`)
         .then((res) => res.json())
         .then((data) => setAllToys(data));
     }
@@ -59,7 +61,14 @@ const AllToy = () => {
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-category</th>
-              <th>Price</th>
+              <th>
+                <span className="inline-flex gap-4">
+                  Price
+                  <button onClick={() => setAsc(!asc)} type="button">
+                    {asc ? <BiDownArrowAlt className="w-5 h-5" /> : <BiUpArrowAlt className="w-5 h-5" />}
+                  </button>
+                </span>
+              </th>
               <th>Available Quantity</th>
               <th>Details</th>
             </tr>
