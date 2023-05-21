@@ -4,6 +4,7 @@ import { FaStream } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { TiTimesOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 import nav from "../../../assets/nav.png";
 import { AuthContext } from "../../../providers/AuthProviders";
 import ActiveLink from "./ActiveLink";
@@ -21,8 +22,9 @@ const Navbar = () => {
       <nav className="lg:px-36 2xl:px-80 relative bg-[#9363b5] py-4 flex  justify-between items-center pl-4 h-20">
         <img className="hidden lg:block absolute top-[80px] z-0 left-0 w-full" src={nav} alt="" />
         <div>
-          <Link to="/">
-            <h2 className="text-4xl font-bold text-[#ffff]">Toy House</h2>
+          <Link className="inline-flex items-center gap-2"  to="/">
+            <img className="h-8 lg:h-10" src={logo} alt="" />
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#ffff]">Toy House</h2>
           </Link>
         </div>
 

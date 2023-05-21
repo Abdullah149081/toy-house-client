@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -52,7 +52,7 @@ const MyToys = () => {
             <tr>
               <th className="capitalize text-base">Sl No</th>
               <th className="capitalize text-base">Toy Name</th>
-              <th className="capitalize text-base">Category</th>
+              <th className="capitalize text-base">Sub-category</th>
               <th className="capitalize text-base">Price</th>
               <th className="capitalize text-base">Available quantity</th>
               <th className="capitalize text-base">Rating</th>
