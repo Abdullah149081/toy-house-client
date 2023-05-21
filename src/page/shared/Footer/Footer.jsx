@@ -1,11 +1,13 @@
+import logo from "../../../assets/logo.png";
+
 const Footer = () => {
   return (
     <div className="bg-[#e8f6f7] lg:bg-[url('./assets/footer.png')]  bg-no-repeat">
       <div className="toy-container ">
         <div className="px-10 lg:px-0 flex flex-col lg:flex-row justify-between gap-6  ">
           <div className="text-[#ff8c9a] ">
-            <h2 className="text-2xl mb-4 font-bold">Logo</h2>
-            <h2 className="text-4xl font-bold text-[#9363B5]">Toy House</h2>
+            <img className="w-20" src={logo} alt="" />
+            <h2 className="text-4xl font-bold text-[#9363B5] mt-2">Toy House</h2>
           </div>
           <div className="text-[#ff8c9a] ">
             <h2 className="text-2xl mb-4 font-bold">INFORMATION</h2>
