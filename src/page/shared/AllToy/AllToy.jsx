@@ -1,12 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PageTitle from "../../../PageTitle/PageTitle";
 import { AuthContext } from "../../../providers/AuthProviders";
 
 const AllToy = () => {
-  const allToys = useLoaderData();
+  const [allToys, setAllToys] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
   const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/toyProducts")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllToys(data);
+        setLoading(false);
+      });
+  }, []);
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/toyNameBySearch/${searchValue}`)
+      .then((res) => res.json())
+      .then((data) => setAllToys(data));
+  };
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      fetch(`http://localhost:5000/toyNameBySearch/${searchValue}`)
+        .then((res) => res.json())
+        .then((data) => setAllToys(data));
+    }
+  };
 
   const handleNotify = () => {
     if (!user) {
@@ -21,8 +46,8 @@ const AllToy = () => {
       <PageTitle title="All Toys" />
       <h2 className="text-center text-4xl font-bold my-6">All Toys</h2>
       <div className="flex justify-center my-8">
-        <input type="text" placeholder="Type here" className="input input-bordered rounded-r-none w-full max-w-xs" />
-        <button type="button" className="btn rounded-l-none btn-outline btn-info">
+        <input onKeyDown={handleEnter} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Type here" className="input input-bordered rounded-r-none w-full max-w-xs" />
+        <button onClick={handleSearch} type="button" className="btn rounded-l-none btn-outline btn-info">
           Search
         </button>
       </div>
@@ -39,26 +64,34 @@ const AllToy = () => {
               <th>Details</th>
             </tr>
           </thead>
-          <tbody>
-            {allToys.map((allToy, idx) => (
-              <tr key={allToy?._id}>
-                <th>{idx + 1}</th>
-                <td className="font-semibold text-base">{allToy?.name}</td>
-                <td className="font-semibold text-base">{allToy.toyName}</td>
-                <td className="font-semibold text-base">{allToy.category}</td>
-                <td className="font-semibold text-base">${allToy.price}</td>
-                <td className="font-semibold text-base">{allToy.quantity}</td>
-                <td>
-                  <Link to={`/view-details/${allToy._id}`}>
-                    <button onClick={handleNotify} type="button" className="btn btn-toy ">
-                      View Details
-                    </button>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+
+          {!loading && (
+            <tbody>
+              {allToys.map((allToy, idx) => (
+                <tr key={allToy?._id}>
+                  <th>{idx + 1}</th>
+                  <td className="font-semibold text-base">{allToy?.name}</td>
+                  <td className="font-semibold text-base">{allToy.toyName}</td>
+                  <td className="font-semibold text-base">{allToy.category}</td>
+                  <td className="font-semibold text-base">${allToy.price}</td>
+                  <td className="font-semibold text-base">{allToy.quantity}</td>
+                  <td>
+                    <Link to={`/view-details/${allToy._id}`}>
+                      <button onClick={handleNotify} type="button" className="btn btn-toy ">
+                        View Details
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          )}
         </table>
+        {loading && (
+          <div className="flex justify-center mt-4 items-center">
+            <progress className="progress w-56 " />;
+          </div>
+        )}
       </div>
     </div>
   );
