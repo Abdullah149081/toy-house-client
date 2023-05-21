@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import PageTitle from "../../../PageTitle/PageTitle";
 import Banner from "../Banner/Banner";
+import Client from "../Client/Client";
 import Gallery from "../Gallery/Gallery";
 import ShopCategory from "../ShopCategory/ShopCategory";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner />
       <Gallery />
       <ShopCategory />
+      <Client />
     </div>
   );
 };
