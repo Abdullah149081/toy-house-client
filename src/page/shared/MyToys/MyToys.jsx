@@ -72,7 +72,7 @@ const MyToys = () => {
                   <span className="bg-blue-100 text-[#9363b5] text-base font-semibold  px-2.5 py-0.5 rounded  "> {toy.rating}</span>
                 </td>
                 <td className="">
-                  <Link className="btn btn-toy mr-4" to="/update">
+                  <Link className="btn btn-toy mr-4" to={`/update/${toy._id}`}>
                     <FiEdit />
                   </Link>
                   <button onClick={() => handleDelete(toy._id)} className="btn btn-toy" type="button">

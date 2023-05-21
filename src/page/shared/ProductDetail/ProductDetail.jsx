@@ -13,10 +13,12 @@ const ProductDetail = () => {
         <meta charSet="utf-8" />
         <title>Toy House | {toyName}</title>
       </Helmet>
-      <div className="hero lg:mt-20 rounded-xl">
+      <div className="lg:mt-20 rounded-xl">
         <div className="hero-content flex-col lg:flex-row lg:gap-20">
-          <img src={toyPicture} className=" w-full lg:max-w-sm rounded-lg shadow-2xl" alt="" />
-          <div className="space-y-4">
+          <div className="lg:w-2/5">
+            <img src={toyPicture} className=" w-full lg:max-w-sm rounded-lg shadow-2xl" alt="" />
+          </div>
+          <div className="space-y-4 lg:w-3/5">
             <h1 className="text-3xl lg:text-5xl font-bold text-[#ff8c9a]">{toyName}</h1>
             <p className="card-title">Seller Name: {name}</p>
             <p className="card-title">

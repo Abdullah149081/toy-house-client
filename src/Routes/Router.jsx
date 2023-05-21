@@ -8,6 +8,7 @@ import Register from "../page/shared/Login/Register/Register";
 
 import MyToys from "../page/shared/MyToys/MyToys";
 import ProductDetail from "../page/shared/ProductDetail/ProductDetail";
+import UpdateToy from "../page/shared/UpdateToy/UpdateToy";
 import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
@@ -43,6 +44,15 @@ const router = createBrowserRouter([
             <MyToys />
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdateToy />
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/toyProducts/${params.id}`),
       },
       {
         path: "/view-details/:id",
