@@ -30,7 +30,7 @@ const AllToy = () => {
         <table className="table text-center -z-0   table-compact w-full">
           <thead>
             <tr>
-              <th>Sl No:</th>
+              <th>#</th>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-category</th>

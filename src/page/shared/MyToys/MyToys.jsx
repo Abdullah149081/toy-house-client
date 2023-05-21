@@ -56,7 +56,7 @@ const MyToys = () => {
               <th className="capitalize text-base">Price</th>
               <th className="capitalize text-base">Available quantity</th>
               <th className="capitalize text-base">Rating</th>
-              <th className="capitalize text-base">Modify</th>
+              <th className="capitalize text-base">Action</th>
               <th className="capitalize text-base">Details</th>
             </tr>
           </thead>
