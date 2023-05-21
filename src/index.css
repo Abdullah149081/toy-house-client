@@ -24,4 +24,5 @@
 .toy-footer :hover {
   font-weight: 600;
   color: #9363b5;
+  cursor: pointer;
 }
