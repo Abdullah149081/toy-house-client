@@ -1,9 +1,21 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const Product = ({ product }) => {
   const { toyPicture, toyName, price, rating, _id } = product;
+  const { user } = useContext(AuthContext);
+
+  const handleNotify = () => {
+    if (!user) {
+      toast("You have to log in first to view details", {
+        duration: 1000,
+      });
+    }
+  };
 
   return (
     <div data-aos="fade-zoom-in">
@@ -20,7 +32,7 @@ const Product = ({ product }) => {
           </div>
           <div className="card-actions mt-4 ">
             <Link to={`/view-details/${_id}`}>
-              <button type="button" className="btn btn-toy ">
+              <button onClick={handleNotify} type="button" className="btn btn-toy ">
                 View Details
               </button>
             </Link>

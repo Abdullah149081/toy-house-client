@@ -16,7 +16,7 @@ const AddToy = () => {
     const toyName = form.toyName.value;
     const name = form.name.value;
     const email = form.email.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const category = form.category.value;
     const quantity = form.quantity.value;
@@ -40,6 +40,7 @@ const AddToy = () => {
             icon: "success",
             confirmButtonText: "ok",
           });
+          // form.reset();
         }
       });
   };
@@ -59,13 +60,13 @@ const AddToy = () => {
               <label className="label">
                 <span className="label-text font-sans text-gray-700 font-semibold">Photo URL Toy</span>
               </label>
-              <input type="url" placeholder="Picture URL of the toy" name="photo" className="input input-bordered w-full" required />
+              <input type="url" placeholder="Picture URL of the toy" name="photo" className="input input-bordered w-full" defaultValue="https://i.ibb.co/K2JnKGP/traddy.jpg" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-sans text-gray-700 font-semibold">Toy Name</span>
               </label>
-              <input type="text" placeholder="Toy name" name="toyName" className="input input-bordered w-full rounded-lg" />
+              <input type="text" placeholder="Toy name" name="toyName" className="input input-bordered w-full rounded-lg" defaultValue="Love Teddy" />
             </div>
             <div className="form-control">
               <label className="label">

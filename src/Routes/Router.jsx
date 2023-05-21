@@ -6,6 +6,7 @@ import ErrorPage from "../page/shared/ErrorPage/ErrorPage";
 import Login from "../page/shared/Login/Login/Login";
 import Register from "../page/shared/Login/Register/Register";
 
+import AllToy from "../page/shared/AllToy/AllToy";
 import MyToys from "../page/shared/MyToys/MyToys";
 import ProductDetail from "../page/shared/ProductDetail/ProductDetail";
 import UpdateToy from "../page/shared/UpdateToy/UpdateToy";
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <Register />,
+      },
+      {
+        path: "/all-toys",
+        element: <AllToy />,
+        loader: () => fetch("http://localhost:5000/toyProducts"),
       },
       {
         path: "/add-toy",

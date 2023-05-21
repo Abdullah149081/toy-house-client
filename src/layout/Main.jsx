@@ -1,7 +1,8 @@
 import { useContext } from "react";
+import { Toaster } from "react-hot-toast";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import GridLoader from "react-spinners/GridLoader";
-import PageTitle from "../PageTitle/PageTitle";
+
 import Footer from "../page/shared/Footer/Footer";
 import Navbar from "../page/shared/Navbar/Navbar";
 import { AuthContext } from "../providers/AuthProviders";
@@ -20,6 +21,7 @@ const Main = () => {
 
   return (
     <div>
+      <Toaster />
       <Navbar />
       <div className="min-h-[calc(100vh-530px)]">
         <Outlet />
