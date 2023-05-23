@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -7,12 +8,13 @@ import { AuthContext } from "../../../providers/AuthProviders";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
+  const [asc, setAsc] = useState(true);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProductsByEmail?email=${user?.email}`)
+    fetch(`https://toy-marketplace-server-omega.vercel.app/toyProductsByEmail?email=${user?.email}&sort=${asc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [user?.email]);
+  }, [asc, user?.email]);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -53,7 +55,14 @@ const MyToys = () => {
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Sl No</th>
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Toy Name</th>
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Sub-category</th>
-              <th className="capitalize text-base bg-sky-200 bg-opacity-20">Price</th>
+              <th className="text-base bg-sky-200 bg-opacity-20 capitalize">
+                <span className="inline-flex gap-4">
+                  Price
+                  <button onClick={() => setAsc(!asc)} type="button">
+                    {asc ? <BiDownArrowAlt className="w-5 h-5" /> : <BiUpArrowAlt className="w-5 h-5" />}
+                  </button>
+                </span>
+              </th>
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Available quantity</th>
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Rating</th>
               <th className="capitalize text-base bg-sky-200 bg-opacity-20">Action</th>
